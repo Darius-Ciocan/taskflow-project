@@ -1,0 +1,291 @@
+:root {
+  /* Colores */
+  --bg: #0b0c10;
+  --surface: #11131a;
+  --surface-2: #171a24;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.65);
+  --primary: #7c5cff;
+
+  /* Tipografía */
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  /* Espaciado */
+  --s-1: 8px;
+  --s-2: 12px;
+  --s-3: 16px;
+  --s-4: 20px;
+  --s-5: 28px;
+
+  /* Layout */
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Base */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(124, 92, 255, 0.25), transparent),
+              radial-gradient(1000px 500px at 90% 0%, rgba(255, 255, 255, 0.06), transparent),
+              var(--bg);
+  color: var(--text);
+}
+
+/* Header */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  padding: var(--s-4);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(11, 12, 16, 0.75);
+  backdrop-filter: blur(10px);
+}
+
+.app-title {
+  font-size: 20px;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+.app-subtitle {
+  margin: 4px 0 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.btn {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(124, 92, 255, 0.18), rgba(124, 92, 255, 0.08));
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+  border-color: rgba(124, 92, 255, 0.35);
+}
+
+/* Layout principal */
+.app {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--s-4);
+  padding: var(--s-4);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Sidebar */
+.sidebar {
+  display: grid;
+  gap: var(--s-4);
+  align-content: start;
+}
+
+.panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--s-4);
+}
+
+.panel__title {
+  margin: 0 0 var(--s-3) 0;
+  font-size: 14px;
+  color: var(--muted);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+  margin-bottom: var(--s-3);
+}
+
+.field__label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.input, .select {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+.input:focus, .select:focus {
+  border-color: rgba(124, 92, 255, 0.5);
+}
+
+.mini-stats {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  opacity: 0.9;
+}
+.dot--high { background: #ff4d6d; }
+.dot--med  { background: #ffd166; }
+.dot--low  { background: #4dd4ac; }
+
+/* Content */
+.content {
+  display: grid;
+  gap: var(--s-4);
+  align-content: start;
+}
+
+.content__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+
+.content__title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.pill {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* 3) Maqueta lista de tareas con FLEX (título + categoría + badge) */
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--s-3);
+}
+
+.task-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--s-4);
+  box-shadow: var(--shadow);
+
+  /* Bonus: transición suave */
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, opacity 180ms ease;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(124, 92, 255, 0.35);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+}
+
+.task-row {
+  display: flex;              /* <- requisito */
+  align-items: center;        /* <- alinea vertical */
+  gap: var(--s-2);
+}
+
+.task-title {
+  margin: 0;
+  font-size: 15px;
+  flex: 1;                    /* <- empuja categoría + badge a la derecha */
+  min-width: 140px;
+}
+
+.task-category {
+  font-size: 12px;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 6px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.badge--high { background: rgba(255, 77, 109, 0.12); border-color: rgba(255, 77, 109, 0.28); }
+.badge--med  { background: rgba(255, 209, 102, 0.12); border-color: rgba(255, 209, 102, 0.28); }
+.badge--low  { background: rgba(77, 212, 172, 0.12); border-color: rgba(77, 212, 172, 0.28); }
+
+.task-desc {
+  margin: 10px 0 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.task-card.is-done {
+  opacity: 0.72;
+}
+.task-card.is-done .task-title {
+  text-decoration: line-through;
+}
+
+/* 4) Media Queries: sidebar bien colocada en móvil */
+@media (max-width: 860px) {
+  .app {
+    grid-template-columns: 1fr; /* una columna */
+  }
+
+  /* Decide posición de la barra lateral en móvil */
+  .sidebar {
+    order: 2; /* sidebar debajo del contenido */
+  }
+
+  .content {
+    order: 1;
+  }
+
+  /* En pantallas pequeñas, que la fila pueda “romper” bien */
+  .task-row {
+    flex-wrap: wrap;
+  }
+  .task-title {
+    flex-basis: 100%; /* el título ocupa una línea */
+  }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .btn, .task-card { transition: none; }
+}
