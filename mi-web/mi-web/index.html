@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskBoard (Maqueta)</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <div class="topbar__left">
+        <h1 class="app-title">TaskBoard</h1>
+        <p class="app-subtitle">Maqueta responsive (HTML + CSS)</p>
+      </div>
+
+      <div class="topbar__right">
+        <button class="btn">+ Nueva tarea</button>
+      </div>
+    </header>
+
+    <main class="app">
+      <aside class="sidebar">
+        <section class="panel">
+          <h2 class="panel__title">Filtros</h2>
+
+          <label class="field">
+            <span class="field__label">Buscar</span>
+            <input class="input" type="search" placeholder="Ej. presupuestos..." />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Categoría</span>
+            <select class="select">
+              <option>Todas</option>
+              <option>Trabajo</option>
+              <option>Casa</option>
+              <option>Personal</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Prioridad</span>
+            <select class="select">
+              <option>Todas</option>
+              <option>Alta</option>
+              <option>Media</option>
+              <option>Baja</option>
+            </select>
+          </label>
+        </section>
+
+        <section class="panel">
+          <h2 class="panel__title">Resumen</h2>
+          <ul class="mini-stats">
+            <li><span class="dot dot--high"></span> 2 Alta</li>
+            <li><span class="dot dot--med"></span> 1 Media</li>
+            <li><span class="dot dot--low"></span> 2 Baja</li>
+          </ul>
+        </section>
+      </aside>
+
+      <section class="content">
+        <section class="content__header">
+          <h2 class="content__title">Tus tareas</h2>
+          <span class="pill">5 tareas</span>
+        </section>
+
+        <section class="tasks" aria-label="Lista de tareas">
+          <ul class="task-list">
+            <li class="task-card">
+              <div class="task-row">
+                <h3 class="task-title">Enviar presupuesto a cliente</h3>
+                <span class="task-category">Trabajo</span>
+                <span class="badge badge--high">Alta</span>
+              </div>
+              <p class="task-desc">Revisar costes + enviar PDF antes de las 18:00.</p>
+            </li>
+
+            <li class="task-card is-done">
+              <div class="task-row">
+                <h3 class="task-title">Comprar comida</h3>
+                <span class="task-category">Casa</span>
+                <span class="badge badge--low">Baja</span>
+              </div>
+              <p class="task-desc">Fruta, verduras, leche y pan.</p>
+            </li>
+
+            <li class="task-card">
+              <div class="task-row">
+                <h3 class="task-title">Bloque de estudio (CSS)</h3>
+                <span class="task-category">Personal</span>
+                <span class="badge badge--med">Media</span>
+              </div>
+              <p class="task-desc">Practicar flex, grid y media queries.</p>
+            </li>
+
+            <li class="task-card">
+              <div class="task-row">
+                <h3 class="task-title">Llamar al propietario</h3>
+                <span class="task-category">Casa</span>
+                <span class="badge badge--high">Alta</span>
+              </div>
+              <p class="task-desc">Coordinar visita y confirmar horario.</p>
+            </li>
+
+            <li class="task-card">
+              <div class="task-row">
+                <h3 class="task-title">Organizar agenda semanal</h3>
+                <span class="task-category">Personal</span>
+                <span class="badge badge--low">Baja</span>
+              </div>
+              <p class="task-desc">Bloques: trabajo, familia, descanso.</p>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
