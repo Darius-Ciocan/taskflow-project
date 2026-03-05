@@ -289,3 +289,28 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .btn, .task-card { transition: none; }
 }
+.task-form {
+  display: flex;
+  gap: var(--s-2);
+  align-items: center;
+}
+
+.task-form .input {
+  flex: 1;
+}
+
+.icon-btn {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  border-radius: 999px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.icon-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 77, 109, 0.35);
+}
